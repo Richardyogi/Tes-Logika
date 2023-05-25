@@ -22,38 +22,40 @@ document.getElementById("generate").onclick = function () {
   //Nomor2 
   document.getElementById("check").onclick = function () {
     var text = document.getElementById("paragrafInput").value.toLowerCase();
-    // console.log(text);
-    // console.log(text.length);
-    let animal1 = "sang gajah";
+    console.log(text);
+    console.log(text.length);
+    let animal1a = "sang";
+    let animal2a = "gajah";
     let animal2 = "serigala";
     let animal3 = "harimau";
     let temp = [];
+    let arrayResult = [];
     let result = "";
     let textRemoveDot = text.replace(/\./g, "");
     temp = textRemoveDot.split(" ");
   
     for (let i = 0; i < temp.length; i++) {
-        if (temp[i] === animal1a && temp[i + 1] === animal2a) {
-          arrayResult.push(temp[i]);
-          arrayResult.push(temp[i + 1]);
-        } else if (temp[i] === animal2) {
-          arrayResult.push(temp[i]);
-        } else if (temp[i] === animal3) {
-          arrayResult.push(temp[i]);
-        }
+      if (temp[i] === animal1a && temp[i + 1] === animal2a) {
+        arrayResult.push(temp[i]);
+        arrayResult.push(temp[i + 1]);
+      } else if (temp[i] === animal2) {
+        arrayResult.push(temp[i]);
+      } else if (temp[i] === animal3) {
+        arrayResult.push(temp[i]);
       }
-      
-    for (let j = 0; j < arrayResult.length; j++) {
-        if (arrayResult[j] === "sang" && arrayResult[j + 1] === "gajah") {
-          result = arrayResult[j] + " " + arrayResult[j + 1];
-        } else {
-          result = result + "-" + arrayResult[j];
-        }
     }
-
+  
+    for (let j = 0; j < arrayResult.length; j++) {
+      if (arrayResult[j] === "sang" && arrayResult[j + 1] === "gajah") {
+        result = arrayResult[j] + " " + arrayResult[j + 1];
+      } else {
+        result = result + "-" + arrayResult[j];
+      }
+    }
+  
     document.getElementById("result2").innerHTML = result;
-    
-  };
+
+}
   
   
   //Nomor3
@@ -97,9 +99,8 @@ document.getElementById("generate").onclick = function () {
 
 
   //Nomor5
-  function makePattern() {
+  function makePattern(n) {
     var temp = [];
-    var n = document.getElementById("nGenerator").value;
     let result = "";
   
     for (var i = 0; i < n; i++) {
@@ -112,9 +113,9 @@ document.getElementById("generate").onclick = function () {
     if (n % 2 !== 0) {
       for (var row = 0; row < n; row++) {
         for (var column = 0; column < n; column++) {
-          if (row === 0 || row === n-1  || column === 0 || column === n-1 ) {
+          if (row === 0 || row === n - 1 || column === 0 || column === n - 1) {
             temp[row][column] = "x";
-          } else if ((row + 1) + (column + 1) === n + 1) {
+          } else if (row + 1 + (column + 1) === n + 1) {
             temp[row][column] = "x";
           }
         }
@@ -128,12 +129,9 @@ document.getElementById("generate").onclick = function () {
       result = result + "<br>";
     }
   
-    document.getElementById("result5").innerHTML = result;
+    console.log(result);
     console.table(temp);
-    // console.log(temp);
   }
-
-
   
   makePattern(5);
   

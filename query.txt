@@ -1,0 +1,13 @@
+Nomor 1
+input : 13
+
+Nomor 2
+input : Berikut adalah kisah sang gajah. Sang gajah memiliki teman serigala bernama DoeSang. Gajah sering dibela oleh serigala ketika harimau mendekati gajah.
+
+Nomor 3:
+input : 5andiwara
+        Fcbarcelona07
+        barcelonafc4
+
+Nomor 5 
+input : 5
